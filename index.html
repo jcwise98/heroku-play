@@ -25,7 +25,7 @@
         //  $("#bingos").append(`<li>${rack.rack}: <span class="answer hidden">${rack.words}</span></li>`);
         //});
         for(i = 0; i < racks.length; i++) {
-          $("#bingos").append(`${racks[i]["rack"]}`);
+          $("#bingos").append(`${racks[0]["rack"]}`);
           var displayWords = [];
           let arrWords = racks[i]["words"].split('@@');
           arrWords.forEach(function (entry) {
