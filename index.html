@@ -24,8 +24,14 @@
         //racks.map(rack=>{
         //  $("#bingos").append(`<li>${rack.rack}: <span class="answer hidden">${rack.words}</span></li>`);
         //});
-        $("#bingos").append(`<li>${racks[0]["rack"]}</li`);
-        $("#bingos").append(`${racks[0]["words"]}`);
+        $("#bingos").append(`${racks[0]["rack"]}`);
+        var arrWords = [];
+        let displayWords = racks[0]["words"].split('@@');
+        tem.forEach(function (entry) {
+            arrWords.push(entry);
+
+        });
+        $("#bingos").append(`<li>${arrWords[0]}</li`);
         $("#bingos li").on("click", function(evt){
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
         });
