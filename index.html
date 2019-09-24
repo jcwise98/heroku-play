@@ -29,7 +29,7 @@
         var displayWords = [];
         var arrWords = [];
         for(i = 0; i < racks.length; i++) {
-          arrWords = racks[i]["words"].split('@@');
+          arrWords.push(racks[i]["words"].split('@@'));
           console.log(arrWords);
         }
           arrWords.forEach(function (entry) {
