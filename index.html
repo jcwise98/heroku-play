@@ -48,6 +48,7 @@
 
       let showRacks = function(racks){
         $("#bingos").html('');
+        $("#correctAnswers").html('');
         //racks.map(rack=>{
         //  $("#bingos").append(`<li>${rack.rack}: <span class="answer hidden">${rack.words}</span></li>`);
         //});
@@ -65,7 +66,7 @@
           });
         console.log(displayWords);
         for(i = 0; i < displayWords.length; i++) {
-          $("#bingos").append(`<li>${displayWords[i]}</li`);
+          $("#correctAnswers").append(`${displayWords[i]}`);
           //$("#bingos").append(`<li>"test"</li`);    
         }
       }
