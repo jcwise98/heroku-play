@@ -35,7 +35,8 @@
         }
          
         for(i = 0; i < displayWords.length; i++) {
-          $("#bingos").append(`<li>${displayWords[i]}</li`);  
+          //$("#bingos").append(`<li>${displayWords[i]}</li`);
+          $("#bingos").append(`<li>"test"</li`);    
         }
         $("#bingos li").on("click", function(evt){
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
