@@ -8,12 +8,36 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
   </head>
+  
+  <style>
+    h1 {
+      color: indigo;
+      font-size: 60px;
+    }
+     h2 {
+       color : thistle;
+       font-size: 20px;
+  }
+
+  </style>
+  
   <body>
-    <h1>Text Twist</h1>
-    <button id="grabmore">Fetch Rack</button>
+  <header>
+    <div>
+      <h1> Text Twist! </h1>
+      <div class= "correctAnswers">Correct Answers:</div>
+      <br>
+      <div class = "letters"></div>
+      <h2>  Guess as many words as you can </h2>
+    </div>
+
+    <div class= "letterBox">_ _ _ _ _ _</div>
+  <br>
+
+ <button id="grabmore">Check Word!</button>
+  </header>
+  
     <h4 id="bingos">
-    </h4>
-    <h4 id="words">
     </h4>
   </body>
   <script>

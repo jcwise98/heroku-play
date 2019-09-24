@@ -1,0 +1,40 @@
+header {
+  border: 1px solid black;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  height: 800px;
+  width: %80px;
+}
+
+.letterBox{
+  border: 2px solid black;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+  height: 55px;
+  width: 300px;
+
+}
+
+.correctAnswers{
+  border: 2px solid black;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+  height: 350px;
+  width: 700px;
+
+}
+
+.letters{
+  border: 2px solid black;
+  background: lavender;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+  height: 55px;
+  width: 300px;
+
+
+}
