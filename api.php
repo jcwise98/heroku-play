@@ -27,14 +27,14 @@
     
     $query2 = "SELECT rack, words FROM racks where rack= :somerack";
     
-    $statement2 = $dbhandle->prepare($query);
+    $statement2 = $dbhandle->prepare($query2);
     $statement2->bindValue(':somerack', $rack);
     $statement2->execute();
     $results2 = $statement2->fetchAll(PDO::FETCH_ASSOC);
     
-    $combArray = array(substr($results[0]['rack'],0, 6), substr($results[0]['rack'],0, 5), substr($results[0]['rack'],0, 4), substr($results[0]['rack'],0, 3), substr($results[0]['rack'],0, 2));
+    $combArray = array(substr($results2[0]['rack'],0, 5), substr($results2[0]['rack'],0, 4), substr($results2[0]['rack'],0, 3), substr($results2[0]['rack'],0, 2));
     
-    for($i=0; $i<=count($combArray); $i++) {
+    for($i=0; $i < count($combArray); $i++) {
       $queryArr = "SELECT rack, words FROM racks where rack= :somerack";
       $statement3 = $dbhandle->prepare($queryArr);
       $statement3->bindValue(':somerack', $combArray[$i]);
