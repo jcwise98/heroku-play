@@ -25,7 +25,7 @@
         //  $("#bingos").append(`<li>${rack.rack}: <span class="answer hidden">${rack.words}</span></li>`);
         //});
         $("#bingos").append(`<li>${racks[0]["rack"]}</li`);
-        $("#bingos").append(`<li>${racks[0]["words"]}</li`);
+        $("#bingos").append(`${racks[0]["words"]}`);
         $("#bingos li").on("click", function(evt){
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
         });
