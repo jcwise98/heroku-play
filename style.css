@@ -21,7 +21,7 @@ header {
   border: 2px solid black;
   font-size: 20px;
   text-align: left;
-  margin: auto; 
+  margin: auto;
   height: 150px;
   width: 700px;
 
@@ -33,6 +33,6 @@ header {
   font-size: 20px;
   text-align: center;
   margin: 0 auto;
-  height: 40px;
+  height: 60px;
   width: 130px;
 }
