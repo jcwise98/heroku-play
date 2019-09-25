@@ -64,12 +64,18 @@
         //});
         $("#rack").append(`${racks[0]["rack"]}`);
 
-        var displayWords = [];
         var arrWords = [];
         for(i = 0; i < racks.length; i++) {
           arrWords.push(racks[i]["words"].split('@@'));
         }
         console.log(arrWords);
+        
+        var newArray = [];
+        for(var i = 0; i < arrWords.length; i++){ 
+          newArr = newArr.concat(arrWords[i]);
+        }
+        console.log(newArr);
+        
         for(i = 0; i < arrWords.length; i++) {
           $("#answers").append(`<li>${arrWords[i]}</li`);
         }
