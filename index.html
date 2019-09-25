@@ -18,7 +18,7 @@
 
   <style>
     h1 {
-      color: green;
+      color: indigo;
       font-size: 60px;
     }
      h2 {
@@ -94,13 +94,13 @@
           newArr = newArr.concat(arrWords[i]);
         }
         console.log(newArr);
-        
+
         var twoArr = [];
         var thrArr = [];
         var forArr = [];
         var fivArr = [];
         var sixArr = [];
-        
+
         for(var i = 0; i < newArr.length; i++) {
           if(newArr[i].length == 2) {
             twoArr.push(newArr[i]);
@@ -118,18 +118,18 @@
             sixArr.push(newArr[i]);
           }
         }
-        
+
         var finalArr = [
           twoArr,
           thrArr,
           forArr,
           fivArr,
           sixArr];
-          
+
         for(i = 0; i < finalArr.length; i++) {
             $("#answers").append(`<p>${finalArr[i]}</p`);
         }
-        
+
         var hideFlag = 1;
         $("#answers").hide();
 
@@ -152,14 +152,14 @@
             alert("No words found");
           }
         });
-        
+
         $("#showwords").on("click", function(){
           if(hideFlag) {
             hideFlag=0;
-           $("#answers").show(); 
+           $("#answers").show();
           } else {
             hideFlag=1;
-           $("#answers").hide(); 
+           $("#answers").hide();
           }
         });
       }
