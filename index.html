@@ -57,7 +57,7 @@
     function correctGuess(arr, arrWords){
     var str = document.getElementById('userGuess').value;
     var flag = 0;
-    for (var i = 0; i < arrWords; i++) {
+    for (var i = 0; i < arrWords.length; i++) {
     var result = str.localeCompare(arrWords[i]);
     if(result == 0){
       flag =1;
