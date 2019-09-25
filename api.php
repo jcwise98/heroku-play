@@ -64,6 +64,7 @@
     }
     
     $combArr = array_unique($combArr);
+    $combArr = array_values($combArr);
     
     for($i=0; $i < count($combArr); $i++) {
       $queryArr = "SELECT rack, words FROM racks where rack= :somerack";
