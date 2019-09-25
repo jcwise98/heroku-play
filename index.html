@@ -46,7 +46,7 @@
     </div>
 
     <input id="userGuess" placeholder="Enter your guess here">
-      <br>
+
 
    <button onclick = "correctGuess()" id = "checkword">Check Word!</button>
     </header>
@@ -56,9 +56,14 @@
 
   function correctGuess(){
     var str = document.getElementById('userGuess').value;
-    alert("The word you have guessed is:"+ str);
+    var i;
+    for (i = 0; i < arrWords; i++) {
+    var result = str.localeCompare(arrWords);
+      alert("The word you have guessed is:"+ str);
+}
+   alert("No words found");
   }
-  
+
     $(document).ready(function(){
 
       let showRacks = function(racks){
