@@ -54,7 +54,7 @@
   </body>
   <script>
 
-  function correctGuess(){
+    correctGuess.apply(this, arrWords){
     var str = document.getElementById('userGuess').value;
     var i;
     for (i = 0; i < arrWords; i++) {
