@@ -7,10 +7,6 @@
       }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
-    function correctGuess(){
-      var str = document.getElementById('userGuess').value;
-      alert("The word you have guessed is:"+ str);
-    }
 
     </script>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -57,6 +53,12 @@
 
   </body>
   <script>
+
+  function correctGuess(){
+    var str = document.getElementById('userGuess').value;
+    alert("The word you have guessed is:"+ str);
+  }
+  
     $(document).ready(function(){
 
       let showRacks = function(racks){
