@@ -18,7 +18,7 @@ header {
 }
 
 .correctAnswers{
-  border: 2px solid black;
+  border: 2px solid blue;
   font-size: 20px;
   text-align: center;
   margin: 0 auto;
