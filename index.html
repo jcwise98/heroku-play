@@ -129,6 +129,8 @@
         for(i = 0; i < finalArr.length; i++) {
             $("#answers").append(`<p>${finalArr[i]}</p`);
         }
+        
+        var hideFlag = 1;
         $("#answers").hide();
 
         $("#checkword").on("click", function(){
@@ -152,7 +154,13 @@
         });
         
         $("#showwords").on("click", function(){
-          $("#answers").toggleClass("hidden");
+          if(hideFlag) {
+            hideFlag=0;
+           $("#answers").show(); 
+          } else {
+            hideFlag=1;
+           $("#answers").hide(); 
+          }
         });
       }
 
