@@ -9,10 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  
+
   <style>
     h1 {
-      color: indigo;
+      color: red;
       font-size: 60px;
     }
      h2 {
@@ -21,19 +21,19 @@
   }
 
   </style>
-  
+
   <body>
   <header>
     <div>
       <h1> Text Twist! </h1>
-      
+
       <div class= "correctAnswers">Correct Answers:
         <br>
         <p id="answers"></p>
       </div>
       <br>
       <button id="grabmore">Fetch Rack</button>
-      <div class = "letters"> 
+      <div class = "letters">
         <p id="rack"><p>
       </div>
       <h2>  Guess as many words as you can </h2>
@@ -44,7 +44,7 @@
 
  <button id="checkword">Check Word!</button>
   </header>
-  
+
   </body>
   <script>
     $(document).ready(function(){
@@ -56,7 +56,7 @@
         //  $("#rack").append(`<li>${rack.rack}: <span class="answer hidden">${rack.words}</span></li>`);
         //});
         $("#rack").append(`${racks[0]["rack"]}`);
-        
+
         var displayWords = [];
         var arrWords = [];
         for(i = 0; i < racks.length; i++) {
@@ -70,7 +70,7 @@
         console.log(displayWords);
         for(i = 0; i < displayWords.length; i++) {
           $("#answers").append(`<li>${displayWords[i]}</li`);
-          //$("#bingos").append(`<li>"test"</li`);    
+          //$("#bingos").append(`<li>"test"</li`);
         }
       }
 
