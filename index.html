@@ -68,13 +68,8 @@
         var arrWords = [];
         for(i = 0; i < racks.length; i++) {
           arrWords.push(racks[i]["words"].split('@@'));
-          console.log(arrWords);
         }
-          arrWords.forEach(function (entry) {
-              displayWords.push(entry);
-
-          });
-        console.log(displayWords);
+        console.log(arrWords);
         for(i = 0; i < arrWords.length; i++) {
           $("#answers").append(`<li>${arrWords[i]}</li`);
         }
