@@ -54,22 +54,7 @@
   </body>
   <script>
 
-    function correctGuess(arr, arrWords){
-    var str = document.getElementById('userGuess').value;
-    var flag = 0;
-    for (var i = 0; i < arrWords.length; i++) {
-    var result = str.localeCompare(arrWords[i]);
-    if(result == 0){
-      flag =1;
-    }
-}
-    if(flag == 1){
-        alert("The word you have guessed is:"+ str + "and it's correct");
-    }
-    else{
-      alert("No words found");
-    }
-  }
+
 
     $(document).ready(function(){
 
@@ -96,6 +81,23 @@
           $("#answers").append(`<li>${displayWords[i]}</li`);
           //$("#bingos").append(`<li>"test"</li`);
         }
+        
+            function correctGuess(arr){
+              var str = document.getElementById('userGuess').value;
+              var flag = 0;
+              for (var i = 0; i < arrWords.length; i++) {
+                var result = str.localeCompare(arrWords[i]);
+                if(result == 0){
+                  flag =1;
+                }
+              }
+              if(flag == 1){
+                  alert("The word you have guessed is:"+ str + "and it's correct");
+              }
+              else{
+                alert("No words found");
+              }
+            }
       }
 
       $("#grabmore").on("click", function(){
