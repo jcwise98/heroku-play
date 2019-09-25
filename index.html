@@ -84,8 +84,8 @@
           var str = document.getElementById('userGuess').value;
           var cStr = str.toUpperCase();
           var flag = 0;
-          for (var i = 0; i < arrWords.length; i++) {
-            var result = cStr.localeCompare(arrWords[i]);
+          for (var i = 0; i < newArr.length; i++) {
+            var result = cStr.localeCompare(newArr[i]);
             if(result == 0){
               flag =1;
             }
