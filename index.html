@@ -129,6 +129,7 @@
         for(i = 0; i < finalArr.length; i++) {
             $("#answers").append(`<p>${finalArr[i]}</p`);
         }
+        $("#answers").toggleClass("hidden");
 
         $("#checkword").on("click", function(){
           var str = document.getElementById('userGuess').value;
