@@ -56,14 +56,16 @@
 
     function correctGuess(arr, arrWords){
     var str = document.getElementById('userGuess').value;
-    var i;
-    for (i = 0; i < arrWords; i++) {
+    var flag = 0;
+    for (var i = 0; i < arrWords; i++) {
     var result = str.localeCompare(arrWords[i]);
     if(result == 0){
-      alert("The word you have guessed is:"+ str + "and it's correct");
+      flag =1;
     }
-     //alert("No words found");
 }
+    if(flag == 1){
+        alert("The word you have guessed is:"+ str + "and it's correct");
+    }
     alert("No words found");
   }
 
