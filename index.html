@@ -64,27 +64,38 @@
         //});
         $("#rack").append(`${racks[0]["rack"]}`);
 
-        var displayWords = [];
         var arrWords = [];
         for(i = 0; i < racks.length; i++) {
           arrWords.push(racks[i]["words"].split('@@'));
         }
         console.log(arrWords);
-        for(i = 0; i < arrWords.length; i++) {
-          $("#answers").append(`<li>${arrWords[i]}</li`);
+
+        var newArr = [];
+        for(var i = 0; i < arrWords.length; i++){
+          newArr = newArr.concat(arrWords[i]);
+        }
+        console.log(newArr);
+
+        for(i = 0; i < newArr.length; i++) {
+          $("#answers").append(`<p>${newArr[i]}</p`);
         }
 
         $("#checkword").on("click", function(){
           var str = document.getElementById('userGuess').value;
+          var cStr = str.toUpperCase();
           var flag = 0;
-          for (var i = 0; i < arrWords.length; i++) {
-            var result = str.localeCompare(arrWords[i]);
+          for (var i = 0; i < newArr.length; i++) {
+            var result = cStr.localeCompare(newArr[i]);
             if(result == 0){
               flag =1;
             }
           }
           if(flag == 1){
-            alert("You have guessed a correct word: "+ str);
+<<<<<<< HEAD
+            alert("You have guessed a correct word:  "+ str);
+=======
+            alert("The word you have guessed is:"+ cStr + "and it's correct");
+>>>>>>> de2ff8708f364edc06a48186d76a81ba5de11b11
           }
           else{
             alert("No words found");
