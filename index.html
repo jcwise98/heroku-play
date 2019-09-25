@@ -58,12 +58,13 @@
     var str = document.getElementById('userGuess').value;
     var i;
     for (i = 0; i < arrWords; i++) {
-    var result = str.localeCompare(arrWords);
+    var result = str.localeCompare(arrWords[i]);
     if(result == 0){
       alert("The word you have guessed is:"+ str + "and it's correct");
     }
-     alert("No words found");
+     //alert("No words found");
 }
+    alert("No words found");
   }
 
     $(document).ready(function(){
