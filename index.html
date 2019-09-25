@@ -93,9 +93,40 @@
           newArr = newArr.concat(arrWords[i]);
         }
         console.log(newArr);
-
-        for(i = 0; i < newArr.length; i++) {
-          $("#answers").append(`<p>${newArr[i]}</p`);
+        
+        var twoArr = [];
+        var thrArr = [];
+        var forArr = [];
+        var fivArr = [];
+        var sixArr = [];
+        
+        for(var i = 0; i < newArr.length; i++) {
+          if(newArr[i].length == 2) {
+            twoArr.push(newArr[i]);
+          }
+          if(newArr[i].length == 3) {
+            thrArr.push(newArr[i]);
+          }
+          if(newArr[i].length == 4) {
+            forArr.push(newArr[i]);
+          }
+          if(newArr[i].length == 5) {
+            fivArr.push(newArr[i]);
+          }
+          if(newArr[i].length == 6) {
+            sixArr.push(newArr[i]);
+          }
+        }
+        
+        var finalArr = [
+          twoArr,
+          thrArr,
+          forArr,
+          fivArr,
+          sixArr];
+          
+        for(i = 0; i < finalArr.length; i++) {
+            $("#answers").append(`<li>${finalArr[i]}</li`);
         }
 
         $("#checkword").on("click", function(){
