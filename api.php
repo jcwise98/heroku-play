@@ -32,12 +32,43 @@
     $statement2->execute();
     $results2 = $statement2->fetchAll(PDO::FETCH_ASSOC);
     
-    $combArray = array(substr($results2[0]['rack'],0, 5), substr($results2[0]['rack'],0, 4), substr($results2[0]['rack'],0, 3), substr($results2[0]['rack'],0, 2));
+    function create_possible_arrays(&$set, &$results)
+    {
+        for ($i = 0; $i < count($set); $i++)
+        {
+            $results[] = $set[$i];
+            $tempset = $set;
+            array_splice($tempset, $i, 1);
+            $tempresults = array();
+            create_possible_arrays($tempset, $tempresults);
+            foreach ($tempresults as $res)
+            {
+                $results[] = $set[$i] . $res;
+            }
+        }
+    }
     
-    for($i=0; $i < count($combArray); $i++) {
+    function sortString(&$string, &$resultStr) {
+        $stringParts = str_split($string);
+        sort($stringParts);
+        $resultStr = implode('', $stringParts);
+    }
+    
+    $combArr = array();
+    $combStr = $results2[0]['rack'];
+    $combStr = str_split($combStr);
+    create_possible_arrays($combStr, $combArr);
+    
+    for ($i = 0; $i < count($combArr); $i++) {
+        sortString($combArr[$i],$combArr[$i]);
+    }
+    
+    $combArr = array_unique($combArr);
+    
+    for($i=0; $i < count($combArr); $i++) {
       $queryArr = "SELECT rack, words FROM racks where rack= :somerack";
       $statement3 = $dbhandle->prepare($queryArr);
-      $statement3->bindValue(':somerack', $combArray[$i]);
+      $statement3->bindValue(':somerack', $combArr[$i]);
       $statement3->execute();
       $results3 = $statement3->fetchAll(PDO::FETCH_ASSOC);
       $results2=array_merge($results2, $results3);
@@ -50,5 +81,3 @@
     header('Content-Type: application/json');
     //this creates json and gives it back to the browser
     echo json_encode($results2);
-
-?>
